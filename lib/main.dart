@@ -78,7 +78,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(onPressed: () {}, child: const Text("skip",style: TextStyle(color:Colors.black),))
+                TextButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                }, child: const Text("skip",style: TextStyle(color:Colors.black),))
               ],
             ),
 
@@ -155,6 +157,24 @@ class _OnboardingPageState extends State<OnboardingPage> {
     }
 
 }
+}
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(child:  Text("Login page")),
+      ),
+    );
+  }
 }
 
 
